@@ -39,6 +39,8 @@ The kit collects the following metrics tree:
 1. Reduxio HX Series system running Reduxio TimeOS v3.3 or higher.
 2. Graphite v0.9 or higher: For easy installation and deployment, use [docker-graphite-statsd Docker Image](https://hub.docker.com/r/graphiteapp/docker-graphite-statsd/).
 3. Optional: Grafana for visualizing the data (See the official [Grafana Docker image](https://hub.docker.com/r/grafana/grafana/)
+4. `graphyte` python module.
+5. `requests` python module.
 
 ## Installation
 
