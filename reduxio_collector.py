@@ -92,7 +92,7 @@ def volume_stats(array_name, array_url, api_token):
                         metric_value = stats[key]['size_in_bytes']
                     else:
                         metric_value = stats[key]
-                    send_to(metric, metric_value, stats["timestamp"])
+                    send_to(metric, metric_value)
 
 
 def array_stats(array_name, array_url, api_token):
@@ -112,7 +112,7 @@ def array_stats(array_name, array_url, api_token):
                 metric_value = stats[key]['size_in_bytes']
             else:
                 metric_value = stats[key]
-            send_to(metric, metric_value, stats["timestamp"])
+            send_to(metric, metric_value)
 
 
 def send_to(metric, metric_value, timestamp=None):
@@ -123,9 +123,10 @@ def send_to(metric, metric_value, timestamp=None):
     >>> send_to(volume_space.vol_ppcmeta_221.volumes, 718848)
     '''
 
-    if to_graphite is True:
-    	if timestamp:
+    if timestamp:
     		timestamp = timestamp / 1000
+
+    if to_graphite is True:
         graphyte.send(metric, metric_value,timestamp)
     else:
         print('{}.{} {} {}'.format(metric_root, metric, metric_value, timestamp))
@@ -138,7 +139,7 @@ def main():
 
     # Run the collectors
     array_stats(array_name,array_url,api_token)
-    volume_stats(array_name,array_url, api_token)
+    # volume_stats(array_name,array_url, api_token)
 
 
 if __name__ == "__main__":
