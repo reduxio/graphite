@@ -33,7 +33,8 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 metric_root = 'storage.reduxio'
 graphite_server_address = 'localhost'
 graphite_server_port = '2003'
-array_url = "mango"
+array_url = "172.17.46.216"
+array_name = "mango"
 api_token = "fa743d41-d95c-43e2-945f-6583ff86993c"
 # If set to False the metrics go to stdout
 # If set to True the metrics go to graphite
@@ -131,15 +132,13 @@ def send_to(metric, metric_value, timestamp=None):
 
 
 def main():
-    # Obtain the API token from argparse array_url, api_token =
-    array_name = array_url.split('.')[0]
 
     # Initialize graphite
     graphyte.init(graphite_server_address, graphite_server_port, prefix=metric_root)
 
     # Run the collectors
     array_stats(array_name,array_url,api_token)
-    volume_stats(array_name, array_url, api_token)
+    volume_stats(array_name,array_url, api_token)
 
 
 if __name__ == "__main__":
