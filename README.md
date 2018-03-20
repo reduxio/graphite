@@ -1,10 +1,10 @@
-# Reduxio StorKit for Graphite
+# Reduxio Collector Script for Graphite
 
-This kit enables administrators to monitor their Reduxio systems using Graphite.
+This collector script enables administrators to monitor their Reduxio systems using Graphite.
 Various metrics from the Reduxio system are collected using Reduxio REST API and
 are added to the Graphite database. This is useful for long term monitoring.
 
-The kit collects the following metrics tree:
+The script collects the following metrics tree:
 
  - storage
 	 - reduxio
