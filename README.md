@@ -64,3 +64,10 @@ The following parameters are configurable in `reduxio_collector.py` script:
 	shell> ./reduxio_collector.py
 This will collect the current seconds granularity metrics for the entire array and per volume. It is recommended to run the script as a cron job with the desired sample interval.
 
+## Acknowledgement
+
+This program was originally developed by Booking.com. With approval from Booking.com, the code was generalised and published as Open Source on github, for which the author would like to express his gratitude.
+
+## License
+
+This code is licensed under the BSD license.
